@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/bootstrap';
+@import 'spinner';
+@import 'utils';
+@import 'rtl';
+@import 'responsive';
+
+@media print {
+    .breadcrumb {
+        display: none !important;
+    }
+}
+
+.title {
+    background: #000;
+    color: #fff;
+    padding: 10px;
+}
+
+.box {
+    margin: 10px;
+    border: 1px solid;
+    padding: 10px;
+}

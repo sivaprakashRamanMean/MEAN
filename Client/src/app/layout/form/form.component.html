@@ -1,0 +1,17 @@
+<div [@routerTransition] class="col-md-12">
+    <div class="col-md-12 title">
+        Paitent Dashboard
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-12 row list_box" *ngFor="let appointment of appoinments">
+            <div class="col-md-6">
+                <p>Date: {{appointment.date}}</p>
+                <p>Start time : {{appointment.start_time}}</p>
+            </div>
+            <div class="col-md-6">
+                <p>Reason: {{appointment.reason}}</p>
+                <p>Doctor: {{getDocName(appointment.doctorId)}}</p>
+            </div>
+        </div>
+    </div>
+</div>

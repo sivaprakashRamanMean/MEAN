@@ -1,0 +1,24 @@
+<div [@routerTransition] class="col-md-12">
+    <div class="col-md-12 title">
+        List of Patients
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-12 row list_box" *ngFor="let appointment of appoinments">
+            <div class="col-md-5">
+                <p>Date: {{appointment.date}}</p>
+                <p>Start time : {{appointment.start_time}}</p>
+            </div>
+            <div class="col-md-5">
+                <p>Reason: {{appointment.reason}}</p>
+                <!-- <p>Doctor: {{getDocName(appointment.doctorId)}}</p> -->
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-sm btn-success" type="button" (click)="updateStatus('Accepted', appointment._id)">Accept</button>
+                <button class="btn btn-sm btn-danger ml-2" type="button" (click)="updateStatus('declined', appointment._id)">Decline</button>
+            </div>
+        </div>
+        <div class="text-center" *ngIf="appoinments.length === 0">
+            No records Found
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div [@routerTransition] class="col-md-12">
+    <div class="col-md-12 title">
+        Appointment
+    </div>
+
+    <div class="col-md-12 box">
+         <div class="col-md-4">
+            <div class="form-group">
+                <label>Date</label>
+                <div class="input-group datepicker-input">
+                    <input
+                        #d="ngbDatepicker"
+                        [(ngModel)]="date"
+                        class="form-control"
+                        name="dp"
+                        ngbDatepicker
+                        placeholder="yyyy-mm-dd"
+                    />
+                    <button (click)="d.toggle()" class="input-group-addon" type="button">
+                        <span class="fa fa-calendar"></span>
+                    </button>
+                </div>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <label> Start Time</label>
+            <ngb-timepicker [(ngModel)]="defaultStartTime"></ngb-timepicker>
+         </div>
+         <div class="col-md-4">
+            <label>End Time</label>
+            <ngb-timepicker [(ngModel)]="defaultEndTime"></ngb-timepicker>
+         </div>
+         <div class="col-md-4">
+            <div class="form-group">
+                <label>Doctors List</label>
+                <select class="form-control" [(ngModel)]="doctor">
+                    <option *ngFor="let obj of doctorsList" [value]="obj._id">{{obj.name}}</option>
+                </select>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="form-group">
+                <label>Reason</label>
+                <input class="form-control" type="text" [(ngModel)]="reason"/>
+            </div>
+         </div>
+         <button type="button" (click)="appAppointment()">Submit</button>
+    </div>
+</div>
